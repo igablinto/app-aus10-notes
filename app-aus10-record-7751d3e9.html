@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于澳洲幸运10 · 一份安静的介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f0;
+            font-family: "Noto Serif SC", "Source Han Serif SC", "Georgia", "Times New Roman", serif;
+            color: #2c2b28;
+            line-height: 1.8;
+            padding: 2rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 760px;
+            width: 100%;
+            background: #fffcf7;
+            padding: 2.8rem 2.4rem;
+            border-radius: 28px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s ease;
+        }
+
+        @media (max-width: 540px) {
+            .page {
+                padding: 2rem 1.4rem;
+                border-radius: 20px;
+            }
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+
+        .hero {
+            margin-bottom: 2.2rem;
+        }
+
+        .hero .prelude {
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            color: #7f7b74;
+            border-left: 3px solid #d6cdb8;
+            padding-left: 1.2rem;
+            font-style: italic;
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 450;
+            margin-top: 0.6rem;
+            line-height: 1.3;
+            color: #2b2823;
+            letter-spacing: 1px;
+        }
+
+        h1 small {
+            display: block;
+            font-size: 1rem;
+            font-weight: 350;
+            color: #7c776f;
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .content p {
+            margin: 1.4em 0;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        .pull-quote {
+            background: #f2eee6;
+            padding: 1.4rem 1.6rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            font-style: normal;
+            border-left: 6px solid #b7ab94;
+            color: #3e3a33;
+            quotes: "“" "”" "‘" "’";
+        }
+
+        .pull-quote::before {
+            content: "“";
+            font-size: 2.2rem;
+            color: #a4947a;
+            line-height: 1;
+            margin-right: 0.15rem;
+            vertical-align: middle;
+        }
+
+        .two-col-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.8rem;
+            margin: 2rem 0 1.6rem;
+        }
+
+        @media (max-width: 480px) {
+            .two-col-grid {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+        }
+
+        .feature-item {
+            background: #f9f6ef;
+            padding: 0.9rem 1.2rem 1rem;
+            border-radius: 18px;
+            border: 1px solid #ece6da;
+            transition: background 0.15s;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-weight: 550;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: #3b352d;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-item span {
+            font-size: 0.94rem;
+            color: #5d5850;
+        }
+
+        .insight-box {
+            background: #efeade;
+            border-radius: 24px;
+            padding: 1.6rem 1.8rem;
+            margin: 2.2rem 0 1.6rem;
+        }
+
+        .insight-box p {
+            margin: 0.6em 0;
+            font-size: 0.98rem;
+        }
+
+        .insight-box .label {
+            font-weight: 500;
+            color: #5d5342;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.76rem;
+            border-bottom: 1px dashed #cdc0ab;
+            padding-bottom: 0.2rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-mini {
+            margin: 2rem 0 1.2rem;
+        }
+
+        .faq-mini details {
+            border-bottom: 1px solid #e6dfd3;
+            padding: 0.8rem 0.3rem;
+        }
+
+        .faq-mini details:first-of-type {
+            border-top: 1px solid #e6dfd3;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            cursor: pointer;
+            color: #3f3a32;
+            font-size: 0.98rem;
+            padding: 0.2rem 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .faq-mini summary::before {
+            content: "↪";
+            margin-right: 0.6rem;
+            color: #a2947d;
+            font-size: 0.9rem;
+        }
+
+        .faq-mini details[open] summary::before {
+            content: "↘";
+        }
+
+        .faq-mini details p {
+            margin: 0.6rem 0 0.2rem 1.6rem;
+            font-size: 0.93rem;
+            color: #5b554b;
+        }
+
+        .signature {
+            margin-top: 2.2rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #e2dacb;
+            font-size: 0.9rem;
+            color: #776e60;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .signature a {
+            color: #4f463b;
+            text-decoration: none;
+            border-bottom: 1px dotted #b7aa95;
+            transition: border 0.15s, color 0.15s;
+            font-weight: 450;
+        }
+
+        .signature a:hover {
+            color: #241f1a;
+            border-bottom: 1px solid #7f6f5a;
+        }
+
+        .mute-note {
+            font-size: 0.85rem;
+            color: #928b7f;
+            margin-top: 0.3rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e7e0d2;
+            margin: 1.8rem 0 1.2rem;
+            opacity: 0.4;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="hero">
+        <div class="prelude">午后读到一个站点 · 慢慢聊</div>
+        <h1>关于澳洲幸运10<br><small>一种数字节奏，一份可信的落脚点</small></h1>
+    </div>
+
+    <div class="content">
+        <p>
+            第一次打开 <a href="https://app-aus10.com">澳洲幸运10</a> 的人，常常会先留意它的名字。<br>
+            不是因为它多特别，而是因为“幸运”这个词在数字世界里总带着一点温度。
+        </p>
+        <p>
+            这个站点并不急着做任何宣告，它只是安静地呈现一组信息、一个框架。<br>
+            它让我想起那些用笔记本手写记录号码的老朋友——不张扬，但一直在。
+        </p>
+
+        <div class="pull-quote">
+            我始终觉得，一个好的数字内容站点，应该像一本常翻常新的书，<br>
+            不需要多余的音效，也不需要闪烁的弹窗。
+        </div>
+
+        <p>
+            在慢慢浏览 <a href="https://app-aus10.com">澳洲幸运10</a> 的过程中，我注意到几个很朴素的细节：
+        </p>
+
+        <div class="two-col-grid">
+            <div class="feature-item">
+                <strong>· 干净的布局</strong>
+                <span>没有突然跳出的干扰，信息优先级清晰，眼睛不累。</span>
+            </div>
+            <div class="feature-item">
+                <strong>· 一致的更新节奏</strong>
+                <span>内容按部就班，不刻意制造紧迫感，适合慢慢看。</span>
+            </div>
+            <div class="feature-item">
+                <strong>· 克制的配色</strong>
+                <span>主色偏暖，不刺眼，长时间盯着也不会烦躁。</span>
+            </div>
+            <div class="feature-item">
+                <strong>· 朴素的可信感</strong>
+                <span>页面没有夸大标语，每一处链接和描述都务实。</span>
+            </div>
+        </div>
+
+        <p>
+            这些看起来都是小事，但把它们凑在一起，就成了一个让人愿意停留的环境。<br>
+            对我而言，一个站点是否值得信任，往往不是因为它承诺了多少，而是它没有打扰你什么。
+        </p>
+
+        <div class="insight-box">
+            <span class="label">一点观察</span>
+            <p>「澳洲幸运10」这个名字里带有地域与数字的双重指向，但站点本身并不喧嚣。</p>
+            <p>它更像一个安静的枢纽：把信息整理好，放在那里，不催你，不推你。</p>
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>站点的内容大概侧重什么方向？</summary>
+                <p>从页面结构和内容来看，主要围绕数字信息、相关背景以及比较实用的数据呈现方式展开，不涉及任何预测或承诺类表述。</p>
+            </details>
+            <details>
+                <summary>访问时需要注意什么？</summary>
+                <p>和一般信息类站点一样，保持平常心浏览即可。页面没有强制弹窗或注册门槛，结构直观。</p>
+            </details>
+            <details>
+                <summary>为什么说它「可信」？</summary>
+                <p>因为它的呈现方式很直接——没有模棱两可的诱导，也没有夸大功能的用词，信息透明度高。</p>
+            </details>
+        </div>
+
+        <hr>
+
+        <p style="font-size: 0.96rem; color: #4e4940;">
+            写这篇介绍不是为了推荐什么，而是觉得在信息过载的时代，一个保持简洁的站点本身就值得被好好记录。
+        </p>
+
+        <p>
+            如果你也好奇一个不装饰、不喧哗的数字角落长什么样，也许可以找个安静的片刻，去看看 <a href="https://app-aus10.com">澳洲幸运10</a>。<br>
+            它不一定适合所有人，但或许正好适合喜欢清爽阅读的你。
+        </p>
+    </div>
+
+    <div class="signature">
+        <span>—— 写于一个很普通的下午</span>
+        <span class="mute-note">· 不赶时间 · 页面版本 v1</span>
+    </div>
+</div>
+</body>
+</html>
